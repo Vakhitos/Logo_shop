@@ -1,0 +1,68 @@
+@import url(https://fonts.googleapis.com/css?family=Play:regular,700);
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+._container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.header {
+  background: url(../img/headerBg.png) top center no-repeat;
+}
+
+.header .top-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .top-header__col {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 475px;
+          flex: 1 0 475px;
+}
+
+.header .top-header__col_logo {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 193px;
+          flex: 1 0 193px;
+  text-align: center;
+}
+
+.header .menu-header__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-right: 80px;
+}
+
+.header .menu-header__item {
+  display: block;
+  width: calc(100% / 3 - 15px);
+}
+
+.header .menu-header__link {
+  display: inline-block;
+  padding: 7px 22px;
+  font-size: 14px;
+  color: #fff;
+  font-family: Play;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.header .menu-header__link:hover {
+  background: #068292;
+  border-radius: 20px;
+}
+/*# sourceMappingURL=style.css.map */

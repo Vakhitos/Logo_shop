@@ -1,0 +1,51 @@
+@import url(https://fonts.googleapis.com/css?family=Play:regular,700);
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+._container{
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.header{
+  background: url(../img/headerBg.png) top center no-repeat;
+  &__top{
+    // height: 90px;
+  }
+  .top-header{
+    display: flex;
+    align-items: center;
+    &__col{
+      flex: 1 0 475px;
+      &_logo{
+        flex: 1 0 193px;
+        text-align: center;
+      }
+    }
+  }
+
+  .menu-header{
+    &__items{
+      display: flex;
+      flex-wrap: wrap;
+      padding-right: 80px;
+    }
+    &__item{
+      display: block;
+      width: calc(100% / 3 - 15px);
+    }
+    &__link{
+      display: inline-block;
+      padding: 7px 22px;
+      font-size: 14px;
+      color: #fff;
+      font-family: Play;
+      transition: .2s;
+      &:hover{
+        background: #068292;
+        border-radius: 20px;
+      }
+    }
+  }
+}
