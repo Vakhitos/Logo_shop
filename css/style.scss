@@ -81,4 +81,32 @@ body{
       text-decoration: none;
     }
   }
+
+  &__bottom{
+    height: 63px;
+    
+  }
+  .bottom-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__col{
+      flex: 0 1 calc(50% - 95px);
+    }
+    &__actions{
+      display: flex;
+      align-items: center;
+    }
+
+  }
+  .actions-header{
+    &__auth{
+      background: url(../img/in.png) left no-repeat;
+      font-size: 14px;
+      font-weight: 300;
+      color: #999;
+      display: block;
+      padding-left: 35px;
+    }
+  }
 }
