@@ -1,4 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Play:regular,700);
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
 *{
   margin: 0;
   padding: 0;
@@ -8,18 +11,22 @@
   max-width: 1140px;
   margin: 0 auto;
 }
+body{
+  font-family: Roboto;
+}
 .header{
   background: url(../img/headerBg.png) top center no-repeat;
   &__top{
-    // height: 90px;
+    height: 90px;
   }
   .top-header{
     display: flex;
     align-items: center;
     &__col{
-      flex: 1 0 475px;
+      flex: 0 1 50%;
       &_logo{
-        flex: 1 0 193px;
+        margin-top: 20px;
+        flex: 1 0 190px;
         text-align: center;
       }
     }
@@ -33,7 +40,7 @@
     }
     &__item{
       display: block;
-      width: calc(100% / 3 - 15px);
+      flex: 0 1 calc(100% / 3);
     }
     &__link{
       display: inline-block;
@@ -47,5 +54,51 @@
         border-radius: 20px;
       }
     }
+  }
+
+  .contacts-header{
+    display: flex;
+    &__item{
+      padding: 0 30px;
+      &_icon{
+        background: url(../img/phone.png) left no-repeat;
+        margin-left: 30px;
+        border-right: solid 1px #fff;
+      }
+      
+      
+    }
+    &__label{
+      font-size: 12px;
+      font-weight: 300;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+    &__phone{
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  &__bottom{
+    height: 63px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__bottom{
+    height: 63px;
+  }
+  .bottom-header{
+    display: flex;
+    justify-content: space-between;
+    &__col{
+      flex: 0 1 calc(50% - 95px);
+    };
+  }
+  .action-header{
+    display: flex;
+    align-items: center;
   }
 }
