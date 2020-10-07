@@ -107,4 +107,45 @@ body {
   color: #fff;
   text-decoration: none;
 }
+
+.header__bottom {
+  height: 63px;
+}
+
+.header .bottom-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header .bottom-header__col {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 calc(50% - 95px);
+          flex: 0 1 calc(50% - 95px);
+}
+
+.header .bottom-header__actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .actions-header__auth {
+  background: url(../img/in.png) left no-repeat;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px;
+  color: #999;
+  padding-left: 35px;
+  margin-right: 54px;
+}
 /*# sourceMappingURL=style.css.map */
