@@ -81,25 +81,4 @@ body{
       text-decoration: none;
     }
   }
-  &__bottom{
-    height: 63px;
-    display: flex;
-    align-items: center;
-  }
-
-  &__bottom{
-    height: 63px;
-  }
-  .bottom-header{
-    display: flex;
-    justify-content: space-between;
-    &__col{
-      flex: 0 1 calc(50% - 95px);
-    };
-  }
-  .action-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
 }
