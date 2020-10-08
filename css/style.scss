@@ -7,8 +7,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+a, li{
+  text-decoration: none;
+  list-style: none;
+}
+
 ._container{
-  max-width: 1140px;
+  padding: 0 15px;
+  max-width: 1170px;
   margin: 0 auto;
 }
 body{
@@ -25,10 +32,15 @@ body{
     &__col{
       flex: 0 1 50%;
       &_logo{
-        margin-top: 20px;
         flex: 1 0 190px;
         text-align: center;
+        position: relative;
+        top: 16px;
+        right: 4px;
       }
+    }
+    &__logo{
+      display: block;
     }
   }
 
@@ -78,7 +90,6 @@ body{
       font-size: 18px;
       font-weight: 700;
       color: #fff;
-      text-decoration: none;
     }
   }
 
@@ -91,7 +102,8 @@ body{
     align-items: center;
     justify-content: space-between;
     &__col{
-      flex: 0 1 calc(50% - 95px);
+      flex: 1 1 calc(50% - 95px);
+      max-width: calc(50% - 95px);
     }
     &__actions{
       display: flex;
@@ -100,16 +112,91 @@ body{
 
   }
   .actions-header{
+    font-size: 14px;
+    font-weight: 300;
     &__auth{
+      display: block;
       background: url(../img/in.png) left no-repeat;
-      font-size: 14px;
-      font-weight: 300;
       line-height: 24px;
       color: #999;
       padding-left: 35px;
       margin-right: 54px;
       span{
-        
+        border-bottom: 1px dashed;
+      }
+    }
+    &__reg{
+      display: block;
+      background: url(../img/user.png) left no-repeat;
+      color: #1ab9ce;
+      padding-left: 35px;
+      margin-right: 54px;
+      line-height: 24px;
+      span{
+        border-bottom: 1px dashed;
+      }
+    }
+    &__email{
+      display: block;
+      background: url(../img/email.png) left no-repeat;
+      color: #1ab9ce;
+      padding-left: 35px;
+      margin-right: 54px;
+      line-height: 13px;
+      span{
+        border-bottom: 1px dashed;
+      }
+    }
+  }
+  .info-header{
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    &__callback{
+      display: block;
+      background: url(../img/phone-2.png) left no-repeat;
+      padding-left: 35px;
+      line-height: 20px;
+      font-size: 15px;
+      font-weight: 300;
+      color: #1ab9ce;
+      margin-right: 38px;
+      span{
+        border-bottom: 1px dashed;
+      }
+    }
+    &__timetable{
+      background: url(../img/calendar.png) left no-repeat;
+      padding-left: 35px;
+      font-size: 12px;
+      color: #999;
+      line-height: 18px;
+      margin-right: 38px;
+      span{
+        font-weight: 700;
+      }
+    }
+    &__cart{
+      background: url(../img/Иконка_корзины.svg) center center no-repeat;
+      display: block;
+      width: 39px;
+      height: 39px;
+      border-radius: 50%;
+      position: relative;
+      span{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 41px;
+        height: 25px;
+        border-radius: 20px;
+        background: #f68038;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 700;
+        position: absolute;
+        left: 30px;
       }
     }
   }
