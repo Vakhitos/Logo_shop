@@ -263,4 +263,75 @@ body {
   position: absolute;
   left: 30px;
 }
+
+/* Page style */
+.page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.page__aside {
+  width: 260px;
+}
+
+.page__work {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.left-menu {
+  background: url(../img/asideBg.png) top no-repeat;
+}
+
+.left-menu__header {
+  padding: 21px 21px 0 21px;
+}
+
+.left-menu .header-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.left-menu .header-menu__title {
+  font-size: 30px;
+  font-weight: 400;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.left-menu .header-menu__hamburger {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 36px;
+  height: 35px;
+  background: #068292;
+}
+
+.left-menu .header-menu__hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+}
+
+/* /Page style */
 /*# sourceMappingURL=style.css.map */

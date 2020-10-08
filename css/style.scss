@@ -201,3 +201,49 @@ body{
     }
   }
 }
+
+/* Page style */
+.page{
+  display: flex;
+
+  &__aside{
+    width: 260px;
+  }
+  &__work{
+    flex-grow: 1;
+  }
+}
+
+.left-menu{
+  background: url(../img/asideBg.png) top no-repeat;
+  &__header{
+    padding: 21px 21px 0 21px;
+  }
+  .header-menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__title{
+      font-size: 30px;
+      font-weight: 400;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    &__hamburger{
+      flex: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 35px;
+      background: #068292;
+      span{
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #fff;
+      }
+    }
+  }
+}
+/* /Page style */
