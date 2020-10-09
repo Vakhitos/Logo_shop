@@ -304,6 +304,7 @@ body {
 .left-menu .header-menu__title {
   font-size: 30px;
   font-weight: 400;
+  line-height: 133.33333%;
   color: #fff;
   text-transform: uppercase;
 }
@@ -324,6 +325,7 @@ body {
   width: 36px;
   height: 35px;
   background: #068292;
+  cursor: pointer;
 }
 
 .left-menu .header-menu__hamburger span {
@@ -331,6 +333,16 @@ body {
   width: 24px;
   height: 2px;
   background: #fff;
+}
+
+.left-menu .drop-menu {
+  opacity: 0;
+}
+
+.left-menu .drop-menu.show {
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  opacity: 1;
 }
 
 .left-menu .drop-menu__item:not(:first-child) {
