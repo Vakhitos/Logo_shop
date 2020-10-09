@@ -286,7 +286,7 @@ body {
 }
 
 .left-menu__header {
-  padding: 21px 21px 0 21px;
+  padding: 21px 21px 10px 21px;
 }
 
 .left-menu .header-menu {
@@ -331,6 +331,24 @@ body {
   width: 24px;
   height: 2px;
   background: #fff;
+}
+
+.left-menu .drop-menu__item:not(:first-child) {
+  border-top: 1px solid #0da1b4;
+}
+
+.left-menu .drop-menu__link {
+  display: block;
+  padding: 15px 10px 15px 21px;
+  font-size: 12px;
+  font-weight: 300;
+  color: #fff;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+.left-menu .drop-menu__link:hover {
+  background: #098494;
 }
 
 /* /Page style */

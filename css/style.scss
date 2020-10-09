@@ -217,7 +217,7 @@ body{
 .left-menu{
   background: url(../img/asideBg.png) top no-repeat;
   &__header{
-    padding: 21px 21px 0 21px;
+    padding: 21px 21px 10px 21px;
   }
   .header-menu{
     display: flex;
@@ -242,6 +242,29 @@ body{
         width: 24px;
         height: 2px;
         background: #fff;
+      }
+    }
+  }
+  .drop-menu{
+    &__item{
+      
+      &:not(:first-child){
+        border-top: 1px solid #0da1b4;
+      }
+    }
+    &__link{
+      display: block;
+      padding: 15px 10px 15px 21px;
+      font-size: 12px;
+      font-weight: 300;
+      color: #fff;
+      transition: .1s;
+
+      &_parent{
+        
+      }
+      &:hover{
+        background: #098494;
       }
     }
   }
