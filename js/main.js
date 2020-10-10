@@ -1,27 +1,50 @@
-
 window.onload = function () {
-// Переменные компонентов :
+
   var menuBurger = document.querySelector('.dropDownMenu__burger');
   var menuBody = document.querySelector('.dropDownMenu__body');
-  var menuHeader = document.querySelector('.dropDownMenu__header');
 
-  menuBurger.addEventListener('click', function (e) {
+  menuBurger.addEventListener('click', treet);
+
+  function treet(e) {
     e.preventDefault();
     this.classList.toggle('active')
 
     if (this.classList.contains('active')) {
-     
-    }
-    else {
       menuBody.classList.add('hide');
-      menuHeader.classList.add('bb');
-      menuBody.addEventListener('transitionend', function () {
+      var handler = function () {
         menuBody.style.display = 'none';
         menuBody.classList.remove('hide');
-        menuHeader.classList.remove('bb');
-      })
+        menuBody.removeEventListener('transitionend', handler)
+      }
+      menuBody.addEventListener('transitionend', handler);
     }
-  })
+    else {
+      menuBody.style.display = 'block';
+      menuBody.classList.add('enter');
+
+      var handler = function () {
+        menuBody.classList.remove('show');
+        menuBody.removeEventListener('transitionend', handler)
+      }
+
+
+      raf(function () {
+        menuBody.classList.add('show');
+        menuBody.classList.remove('enter');
+      })
+
+      menuBody.addEventListener('transitionend', handler);
+
+
+    }
+  }
+}
+function raf(fn) {
+  window.requestAnimationFrame(function () {
+    window.requestAnimationFrame(function () {
+    fn();
+    });
+  });
 
 
 }

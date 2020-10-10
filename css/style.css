@@ -302,11 +302,6 @@ body {
   z-index: 1000;
 }
 
-.dropDownMenu__header.bb {
-  -webkit-box-shadow: 0 0 20px 0px #847e7e;
-          box-shadow: 0 0 20px 0px #847e7e;
-}
-
 .dropDownMenu__title {
   font-size: 30px;
   font-weight: 400;
@@ -350,11 +345,22 @@ body {
   background: url(../img/asideBg.png) top no-repeat;
 }
 
+.dropDownMenu__body.enter {
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 0;
+}
+
 .dropDownMenu__body.hide {
-  -webkit-transition: .3s;
-  transition: .3s;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 0;
+}
+
+.dropDownMenu__body.show {
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 1;
 }
 
 .dropDownMenu__items {
