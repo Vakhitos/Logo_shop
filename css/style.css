@@ -8,7 +8,8 @@
           box-sizing: border-box;
 }
 
-a, li {
+a,
+li {
   text-decoration: none;
   list-style: none;
 }
@@ -82,8 +83,8 @@ body {
   font-size: 14px;
   color: #fff;
   font-family: Play;
-  -webkit-transition: .2s;
-  transition: .2s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .header .menu-header__link:hover {
@@ -281,15 +282,13 @@ body {
           flex-grow: 1;
 }
 
-.left-menu {
+.dropDownMenu {
+  overflow: hidden;
+}
+
+.dropDownMenu__header {
   background: url(../img/asideBg.png) top no-repeat;
-}
-
-.left-menu__header {
   padding: 21px 21px 10px 21px;
-}
-
-.left-menu .header-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -299,9 +298,16 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
+  z-index: 1000;
 }
 
-.left-menu .header-menu__title {
+.dropDownMenu__header.bb {
+  -webkit-box-shadow: 0 0 20px 0px #847e7e;
+          box-shadow: 0 0 20px 0px #847e7e;
+}
+
+.dropDownMenu__title {
   font-size: 30px;
   font-weight: 400;
   line-height: 133.33333%;
@@ -309,7 +315,7 @@ body {
   text-transform: uppercase;
 }
 
-.left-menu .header-menu__hamburger {
+.dropDownMenu__burger {
   -webkit-box-flex: 0;
       -ms-flex: none;
           flex: none;
@@ -326,40 +332,50 @@ body {
   height: 35px;
   background: #068292;
   cursor: pointer;
+  border: none;
 }
 
-.left-menu .header-menu__hamburger span {
+.dropDownMenu__burger:focus {
+  outline: 0;
+}
+
+.dropDownMenu__burger span {
   display: block;
   width: 24px;
   height: 2px;
   background: #fff;
 }
 
-.left-menu .drop-menu {
-  opacity: 0;
+.dropDownMenu__body {
+  background: url(../img/asideBg.png) top no-repeat;
 }
 
-.left-menu .drop-menu.show {
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
-  opacity: 1;
+.dropDownMenu__body.hide {
+  -webkit-transition: .3s;
+  transition: .3s;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 
-.left-menu .drop-menu__item:not(:first-child) {
+.dropDownMenu__items {
+  display: block;
+}
+
+.dropDownMenu__item:not(:first-child) {
   border-top: 1px solid #0da1b4;
 }
 
-.left-menu .drop-menu__link {
+.dropDownMenu__link {
   display: block;
   padding: 15px 10px 15px 21px;
   font-size: 12px;
   font-weight: 300;
   color: #fff;
-  -webkit-transition: .1s;
-  transition: .1s;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 
-.left-menu .drop-menu__link:hover {
+.dropDownMenu__link:hover {
   background: #098494;
 }
 
