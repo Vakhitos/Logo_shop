@@ -212,15 +212,13 @@ body {
 }
 
 .dropDownMenu {
-  overflow: hidden;
+  position: relative;
   &__header {
     background: url(../img/asideBg.png) top no-repeat;
     padding: 21px 21px 10px 21px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
-    z-index: 1000;
     
     
   }
@@ -255,18 +253,6 @@ body {
   }
   &__body {
     background: url(../img/asideBg.png) top no-repeat;
-    &.enter{
-      transition: 1s;
-      opacity: 0;
-    }
-    &.hide {
-      transition: 1s;
-      opacity: 0;
-    }
-    &.show{
-      transition: 1s;
-      opacity: 1;
-    }
   }
   &__items {
     display: block;
@@ -274,6 +260,14 @@ body {
   &__item {
     &:not(:first-child) {
       border-top: 1px solid #0da1b4;
+    }
+    & .submenu{
+      transform: translateX(100%);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
     }
   }
   &__link {

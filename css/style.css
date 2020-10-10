@@ -283,7 +283,7 @@ body {
 }
 
 .dropDownMenu {
-  overflow: hidden;
+  position: relative;
 }
 
 .dropDownMenu__header {
@@ -298,8 +298,6 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  position: relative;
-  z-index: 1000;
 }
 
 .dropDownMenu__title {
@@ -345,30 +343,22 @@ body {
   background: url(../img/asideBg.png) top no-repeat;
 }
 
-.dropDownMenu__body.enter {
-  -webkit-transition: 1s;
-  transition: 1s;
-  opacity: 0;
-}
-
-.dropDownMenu__body.hide {
-  -webkit-transition: 1s;
-  transition: 1s;
-  opacity: 0;
-}
-
-.dropDownMenu__body.show {
-  -webkit-transition: 1s;
-  transition: 1s;
-  opacity: 1;
-}
-
 .dropDownMenu__items {
   display: block;
 }
 
 .dropDownMenu__item:not(:first-child) {
   border-top: 1px solid #0da1b4;
+}
+
+.dropDownMenu__item .submenu {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
 .dropDownMenu__link {
