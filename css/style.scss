@@ -262,14 +262,34 @@ body {
       border-top: 1px solid #0da1b4;
     }
     & .submenu{
+      background: #fff;
+      border: solid 1px #0da1b4;
       transform: translateX(100%);
       position: absolute;
       top: 0;
       bottom: 0;
       right: 0;
       left: 0;
+      
+      &__list{
+        border-bottom: 1px solid #dedede;
+        padding: 20px 0;
+      }
+      &__link{
+        color: #068292;
+        font-size: 12px;
+        font-weight: 300;
+        display: block;
+        padding: 10px 40px;
+        transition: .2s;
+        &:hover{
+          background: #068292;
+          color: #fff;
+        }
+      }
     }
   }
+  
   &__link {
     display: block;
     padding: 15px 10px 15px 21px;

@@ -352,6 +352,8 @@ body {
 }
 
 .dropDownMenu__item .submenu {
+  background: #fff;
+  border: solid 1px #0da1b4;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   position: absolute;
@@ -359,6 +361,26 @@ body {
   bottom: 0;
   right: 0;
   left: 0;
+}
+
+.dropDownMenu__item .submenu__list {
+  border-bottom: 1px solid #dedede;
+  padding: 20px 0;
+}
+
+.dropDownMenu__item .submenu__link {
+  color: #068292;
+  font-size: 12px;
+  font-weight: 300;
+  display: block;
+  padding: 10px 40px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.dropDownMenu__item .submenu__link:hover {
+  background: #068292;
+  color: #fff;
 }
 
 .dropDownMenu__link {
