@@ -36,12 +36,14 @@ window.onload = function () {
     linkParent.addEventListener('mouseenter', function(e){
       e.preventDefault();
       this.classList.add('act');
-      linkParent.hasChildNodes.classList.add('sh');
+      var er = this.querySelector('.subMenu__content');
+      er.classList.add('sh');
       // linkParent>subMenu__content.classList.add('sh');
     });
     linkParent.addEventListener('mouseleave', function(e){
       this.classList.remove('act');
-      this>subMenu__content.classList.remove('sh');
+      var er = this.querySelector('.subMenu__content');
+      er.classList.remove('sh');
     });
   }
 }
