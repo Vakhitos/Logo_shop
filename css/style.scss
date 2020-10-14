@@ -215,14 +215,13 @@ body {
 /* dropMenu */
 .dropMenu {
   position: relative;
+  background: url(../img/asideBg.png) center center;
   // .dropMenu__header
   &__header {
-    background: url(../img/asideBg.png) center center;
+    
     padding: 21px 21px 21px 21px;
     display: flex;
     align-items: center;
-    position: relative;
-    z-index: 1000;
   }
 
   // .dropMenu__title
@@ -275,15 +274,16 @@ body {
   // .dropMenu__body
 
   &__body {
+    overflow-y: hidden;
+    overflow-x: visible;
   }
 
   // .dropMenu__items
 
   &__items {
-    // display: none;
+    display: none;
     z-index: 0;
     width: 100%;
-    background: url(../img/asideBg.png) center center;
     &.drop {
       transition: 0.5s;
       transform: translateY(-100%);
@@ -306,6 +306,10 @@ body {
       border-top: 1px solid #1aa7b9;
     }
     &_parent{
+
+      &.act{
+        background: #098494;
+      }
       
     }
   }
@@ -336,8 +340,11 @@ body {
   // .subMenu__items
   &__content {
     width: 282px;
+    height: 100%;
     position: absolute;
     transform: translateX(-100%);
+    z-index: -1;
+    border: 2px solid #098494;
     transition: .5s;
     &.sh {
       position: static;
@@ -347,7 +354,7 @@ body {
   &__items {
     border-bottom: solid 1px #dedede;
     padding: 20px 0 28px 0;
-    border: 2px solid #098494;
+    
   }
 
   // .subMenu__item

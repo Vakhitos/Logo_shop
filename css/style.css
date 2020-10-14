@@ -285,10 +285,10 @@ body {
 /* dropMenu */
 .dropMenu {
   position: relative;
+  background: url(../img/asideBg.png) center center;
 }
 
 .dropMenu__header {
-  background: url(../img/asideBg.png) center center;
   padding: 21px 21px 21px 21px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -296,8 +296,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
-  z-index: 1000;
 }
 
 .dropMenu__title {
@@ -354,10 +352,15 @@ body {
   bottom: 7px;
 }
 
+.dropMenu__body {
+  overflow-y: hidden;
+  overflow-x: visible;
+}
+
 .dropMenu__items {
+  display: none;
   z-index: 0;
   width: 100%;
-  background: url(../img/asideBg.png) center center;
 }
 
 .dropMenu__items.drop {
@@ -388,6 +391,10 @@ body {
   border-top: 1px solid #1aa7b9;
 }
 
+.dropMenu__item_parent.act {
+  background: #098494;
+}
+
 .dropMenu__link {
   display: block;
   color: #fff;
@@ -413,9 +420,12 @@ body {
 
 .subMenu__content {
   width: 282px;
+  height: 100%;
   position: absolute;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
+  z-index: -1;
+  border: 2px solid #098494;
   -webkit-transition: .5s;
   transition: .5s;
 }
@@ -429,7 +439,6 @@ body {
 .subMenu__items {
   border-bottom: solid 1px #dedede;
   padding: 20px 0 28px 0;
-  border: 2px solid #098494;
 }
 
 .subMenu__item {

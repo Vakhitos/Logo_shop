@@ -29,14 +29,15 @@ window.onload = function () {
     }
   }
 // Движение в право
-  let linkParents = document.querySelectorAll('dropMenu__item_parent');
+  let linkParents = document.querySelectorAll('.dropMenu__item_parent');
   let subMenu__content = document.querySelector('.subMenu__content');
   for(let i = 0; i < linkParents.length; i++){
     const linkParent = linkParents[i];
     linkParent.addEventListener('mouseenter', function(e){
       e.preventDefault();
       this.classList.add('act');
-      this>subMenu__content.classList.add('sh');
+      linkParent.hasChildNodes.classList.add('sh');
+      // linkParent>subMenu__content.classList.add('sh');
     });
     linkParent.addEventListener('mouseleave', function(e){
       this.classList.remove('act');
