@@ -1,56 +1,98 @@
 window.onload = function () {
-  // Движение вниз
-  let dropMenu__btn = document.querySelector('.dropMenu__btn');
-  let dropMenu__body = document.querySelector('.dropMenu__items');
-  dropMenu__btn.addEventListener('click', dropDownMenu);
-  function dropDownMenu(e) {
+
+  
+  
+
+ 
+  // ===== ЛЕВОЕ МЕНЮ =====
+  let dropMenuBtn = document.querySelector('.drop-menu .drop-menu__btn');
+  let dropMenuBody = document.querySelector('.drop-menu .drop-menu__body');
+  let itemParents = document.querySelectorAll('.drop-menu .drop-menu__item_parent');
+
+  // ===== ФОРМА ПОИКА ПО КАТЕГОРИЯМ =====
+  let selectSearch = document.querySelector('.form-search > .select-search');
+  let catSearch = document.querySelector('.categories-search');
+
+  // Function - requestAnimationFrame
+  function raf(fn) {
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(function () {
+        fn();
+      });
+    });
+  }
+
+  // ===== ЛЕВОЕ МЕНЮ "ВНИЗ" =====
+  dropMenuBtn.addEventListener('click', function (e) {
     e.preventDefault();
     this.classList.toggle('active');
     if (this.classList.contains('active')) {
-      let trans = function () {
-        dropMenu__body.classList.remove('fa-enter');
-        dropMenu__body.removeEventListener('transitionend', trans);
-      }
-      dropMenu__body.style.display = 'block';
-      dropMenu__body.classList.add('enter');
+      dropMenuBody.style.display = 'block';
+      dropMenuBody.classList.add('show-temp');
       raf(function () {
-        dropMenu__body.classList.add('fa-enter');
-        dropMenu__body.classList.remove('enter');
+        dropMenuBody.classList.add('show');
       });
-      dropMenu__body.addEventListener('transitionend', trans);
-    } else {
-      let trans = function () {
-        dropMenu__body.style.display = 'none';
-        dropMenu__body.classList.remove('drop');
-        dropMenu__body.removeEventListener('transitionend', trans);
+      let handler = function () {
+        dropMenuBody.classList.remove('show');
+        dropMenuBody.classList.remove('show-temp');
+        dropMenuBody.removeEventListener('transitionend', handler);
       }
-      dropMenu__body.classList.add('drop');
-      dropMenu__body.addEventListener('transitionend', trans);
+      dropMenuBody.addEventListener('transitionend', handler);
     }
-  }
-// Движение в право
-  let linkParents = document.querySelectorAll('.dropMenu__item_parent');
-  let subMenu__content = document.querySelector('.subMenu__content');
-  for(let i = 0; i < linkParents.length; i++){
-    const linkParent = linkParents[i];
-    linkParent.addEventListener('mouseenter', function(e){
-      e.preventDefault();
-      this.classList.add('act');
-      var er = this.querySelector('.subMenu__content');
-      er.classList.add('sh');
-      // linkParent>subMenu__content.classList.add('sh');
-    });
-    linkParent.addEventListener('mouseleave', function(e){
-      this.classList.remove('act');
-      var er = this.querySelector('.subMenu__content');
-      er.classList.remove('sh');
-    });
-  }
-}
-function raf(fn) {
-  window.requestAnimationFrame(function () {
-    window.requestAnimationFrame(function () {
-      fn();
-    });
+    else {
+      dropMenuBody.classList.add('hide');
+      let trend = function () {
+        dropMenuBody.style.display = 'none';
+        dropMenuBody.classList.remove('hide');
+        dropMenuBody.removeEventListener('transitionend', trend);
+      }
+      dropMenuBody.addEventListener('transitionend', trend);
+
+    }
   });
+// ===== ЛЕВОЕ МЕНЮ "ВПРАВО" =====
+  for (let i = 0; i < itemParents.length; i++) {
+    const itemParent = itemParents[i];
+    itemParent.addEventListener('mouseenter', function () {
+      this.classList.add('active');
+      let subMenuInner = this.querySelector('.sub-menu__inner');
+      if(subMenuInner){
+        subMenuInner.classList.add('show');
+      }
+      
+    });
+    itemParent.addEventListener('mouseleave', function (e) {
+      this.classList.remove('active');
+      let subMenuInner = this.querySelector('.sub-menu__inner');
+      if(subMenuInner){
+        subMenuInner.classList.remove('show');
+      }
+    });
+  }
+
+  // ===== ФОРМА ФИЛЬТР =====
+  selectSearch.addEventListener('click', function(e){
+    this.classList.toggle('active');
+    if(this.classList.contains('active')){
+      catSearch.classList.add('show');
+    }
+    else{
+      catSearch.classList.remove('show');
+    }
+  });
+
+ 
+ 
+  
 }
+let check = document.querySelectorAll('.categories-search__items');
+  for (let index = 0; index < check.length; index++) {
+    const checks = check[index];
+    checks.addEventListener('click', function(e){
+      
+      checks.classList.toggle('ct');
+    });
+    
+  }
+// =====================================================
+
