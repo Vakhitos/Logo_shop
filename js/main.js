@@ -1,9 +1,9 @@
 window.onload = function () {
 
-  
-  
 
- 
+
+
+
   // ===== ЛЕВОЕ МЕНЮ =====
   let dropMenuBtn = document.querySelector('.drop-menu .drop-menu__btn');
   let dropMenuBody = document.querySelector('.drop-menu .drop-menu__body');
@@ -50,49 +50,57 @@ window.onload = function () {
 
     }
   });
-// ===== ЛЕВОЕ МЕНЮ "ВПРАВО" =====
+  // ===== ЛЕВОЕ МЕНЮ "ВПРАВО" =====
   for (let i = 0; i < itemParents.length; i++) {
     const itemParent = itemParents[i];
     itemParent.addEventListener('mouseenter', function () {
       this.classList.add('active');
       let subMenuInner = this.querySelector('.sub-menu__inner');
-      if(subMenuInner){
+      if (subMenuInner) {
         subMenuInner.classList.add('show');
       }
-      
+
     });
     itemParent.addEventListener('mouseleave', function (e) {
       this.classList.remove('active');
       let subMenuInner = this.querySelector('.sub-menu__inner');
-      if(subMenuInner){
+      if (subMenuInner) {
         subMenuInner.classList.remove('show');
       }
     });
   }
 
   // ===== ФОРМА ФИЛЬТР =====
-  selectSearch.addEventListener('click', function(e){
+  let filterCategoriesBtn = document.querySelector('.filter-categories__btn');
+  let filterCategoriesContent = document.querySelector('.filter-categories__content');
+  filterCategoriesBtn.addEventListener('click', function (e) {
     this.classList.toggle('active');
-    if(this.classList.contains('active')){
-      catSearch.classList.add('show');
-    }
-    else{
-      catSearch.classList.remove('show');
+    if (this.classList.contains('active')) {
+      filterCategoriesContent.style.display = 'block';
+      filterCategoriesContent.classList.add('show-temp');
+      raf(function () {
+        filterCategoriesContent.classList.add('show');
+      });
+      let handler = function () {
+        filterCategoriesContent.classList.remove('show-temp');
+        filterCategoriesContent.classList.remove('show');
+        filterCategoriesContent.removeEventListener('transitionend', handler);
+      }
+      filterCategoriesContent.addEventListener('transitionend', handler);
+    } else {
+      filterCategoriesContent.classList.add('hide');
+      let handler = function () {
+        filterCategoriesContent.style.display = 'none';
+        filterCategoriesContent.classList.remove('hide');
+        filterCategoriesContent.removeEventListener('transitionend', handler);
+      }
+      filterCategoriesContent.addEventListener('transitionend', handler);
     }
   });
 
- 
- 
+
   
 }
-let check = document.querySelectorAll('.categories-search__items');
-  for (let index = 0; index < check.length; index++) {
-    const checks = check[index];
-    checks.addEventListener('click', function(e){
-      
-      checks.classList.toggle('ct');
-    });
-    
-  }
+
 // =====================================================
 
