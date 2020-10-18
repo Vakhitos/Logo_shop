@@ -14,13 +14,7 @@ window.onload = function () {
   let catSearch = document.querySelector('.categories-search');
 
   // Function - requestAnimationFrame
-  function raf(fn) {
-    window.requestAnimationFrame(function () {
-      window.requestAnimationFrame(function () {
-        fn();
-      });
-    });
-  }
+
 
   // ===== ЛЕВОЕ МЕНЮ "ВНИЗ" =====
   dropMenuBtn.addEventListener('click', function (e) {
@@ -75,19 +69,7 @@ window.onload = function () {
   let filterCategoriesContent = document.querySelector('.filter-categories__content');
   filterCategoriesBtn.addEventListener('click', function (e) {
     this.classList.toggle('active');
-    if (this.classList.contains('active')) {
-      filterCategoriesContent.style.display = 'block';
-      filterCategoriesContent.classList.add('show-temp');
-      raf(function () {
-        filterCategoriesContent.classList.add('show');
-      });
-      let handler = function () {
-        filterCategoriesContent.classList.remove('show-temp');
-        filterCategoriesContent.classList.remove('show');
-        filterCategoriesContent.removeEventListener('transitionend', handler);
-      }
-      filterCategoriesContent.addEventListener('transitionend', handler);
-    } else {
+    if (!filterCategoriesBtn.classList.contains('active')) {
       filterCategoriesContent.classList.add('hide');
       let handler = function () {
         filterCategoriesContent.style.display = 'none';
@@ -95,11 +77,30 @@ window.onload = function () {
         filterCategoriesContent.removeEventListener('transitionend', handler);
       }
       filterCategoriesContent.addEventListener('transitionend', handler);
+    } else {
+      filterCategoriesContent.style.display = 'block';
+      filterCategoriesContent.classList.add('show-temp');
+      raf(function () {
+        filterCategoriesContent.classList.remove('show-temp');
+        filterCategoriesContent.classList.add('show');
+      });
+      let handler = function () {
+        filterCategoriesContent.classList.remove('show');
+        filterCategoriesContent.removeEventListener('transitionend', handler);
+      }
+      filterCategoriesContent.addEventListener('transitionend', handler);   
     }
   });
 
+  function raf(fn) {
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(function () {
+        fn();
+      });
+    });
+  }
 
-  
+
 }
 
 // =====================================================

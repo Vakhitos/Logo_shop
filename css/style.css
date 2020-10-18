@@ -642,6 +642,13 @@ body {
   border-bottom: 4px solid #f68038;
 }
 
+.filter-categories__content.hide {
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
 .filter-categories__content.show-temp {
   -webkit-transition: .5s;
   transition: .5s;
@@ -654,13 +661,6 @@ body {
   transition: .5s;
   -webkit-transform: translateY(0);
           transform: translateY(0);
-}
-
-.filter-categories__content.hide {
-  -webkit-transition: .5s;
-  transition: .5s;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
 }
 
 .filter-categories__row {
