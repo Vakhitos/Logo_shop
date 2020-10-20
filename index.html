@@ -4,14 +4,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
   <title>Logo_shop</title>
 </head>
 
 <body>
   <!-- header -->
   <header class="header">
-    <div class="header__top top-header _container">
+    <div class="header__top top-header container">
       <div class="top-header__col">
         <nav class="top-header__menu menu-header">
           <ul class="menu-header__items">
@@ -281,54 +285,28 @@
       </form>
       <!-- /Form Search -->
 
-      <!-- Page Slider  -->
-      <div class="main-slider">
-        <div class="main-slider__body">
-          <div class="main-slider__slide">
-            <div class="main-slider__content">
-              <div class="main-slider__title"><span>Мега</span> распродажа</div>
-              <div class="main-slider__text text-slider">
-                <span class="text-slider__1">Успей купить </span>
-                <p>тренажеры</p> <br>
-                <span class="text-slider__2">по старой цене</span> <br>
-                <p >до их</p>
-                <span class="text-slider__3">повышения</span>
-              </div>
-              <div class="main-slider__bottom">
-                <div class="main-slider__price">от 45 000 </div>
-                <button class="main-slider__btn"><span>Подробнее</span></button>
-              </div>
-            </div>
-            <div class="main-slider__img">
-                <img src="img/slider-top/01.png" alt="">
-            </div>
-          </div>
-        </div>
-        <div class="main-slider__dots dots-slider">
-          <div class="dots-slider__number"><span>1</span></div>
-          <div class="dots-slider__dot">
-            <img src="./img/slider-top/01.png" alt="">
-          </div>
-          <div class="dots-slider__dot">
-            <img src="./img/slider-top/01.png" alt="">
-          </div>
-          <div class="dots-slider__dot">
-            <img src="./img/slider-top/01.png" alt="">
-          </div>
-          <div class="dots-slider__dot">
-            <img src="./img/slider-top/01.png" alt="">
-          </div>
-        </div>
-      </div>
-      <!-- /Page Slider  -->
+      <!-- Main Slider -->
+      <!-- Slider main container -->
+    
+      <!-- / Main Slider -->
 
     </div>
   </div>
   </div>
   <!-- /Page -->
-
-
+  <script type="module">
+    import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
+  
+    var swiper = new Swiper('.swiper-container', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="./js/main.js"></script>
+
 </body>
 
 </html>

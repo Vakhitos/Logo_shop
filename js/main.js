@@ -1,17 +1,10 @@
 window.onload = function () {
-
-
-
-
+  
 
   // ===== ЛЕВОЕ МЕНЮ =====
   let dropMenuBtn = document.querySelector('.drop-menu .drop-menu__btn');
   let dropMenuBody = document.querySelector('.drop-menu .drop-menu__body');
   let itemParents = document.querySelectorAll('.drop-menu .drop-menu__item_parent');
-
-  // ===== ФОРМА ПОИКА ПО КАТЕГОРИЯМ =====
-  let selectSearch = document.querySelector('.form-search > .select-search');
-  let catSearch = document.querySelector('.categories-search');
 
   // Function - requestAnimationFrame
 
@@ -122,5 +115,6 @@ function slideToggle(block, btn) {
   else {
     block.style.display = 'none';
   }
+
 }
 //===============================================

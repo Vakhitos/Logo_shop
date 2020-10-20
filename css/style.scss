@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Play:regular,700);
-
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
 
 * {
@@ -7,7 +6,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 a,
 li {
   text-decoration: none;
@@ -211,7 +209,8 @@ body {
     z-index: 4;
   }
   &__work {
-    flex-grow: 1;
+    max-width: 850px;
+    flex-basis: 850px;
   }
 }
 // ======================================================
@@ -259,6 +258,7 @@ body {
     background: #068292;
     cursor: pointer;
     outline: none;
+
     span {
       display: block;
       position: relative;
@@ -306,9 +306,6 @@ body {
   }
 
   // .drop-menu__items
-
-  &__items {
-  }
 
   // .drop-menu__item
 
@@ -372,9 +369,6 @@ body {
   }
 
   // .sub-menu__item
-
-  &__item {
-  }
 
   // .sub-menu__link
 
@@ -614,9 +608,6 @@ body {
 
   // .filter-categories__items
 
-  &__items {
-  }
-
   // .filter-categories__item
 
   &__item {
@@ -651,183 +642,8 @@ body {
   }
 
   // .filter-categories__checkbox-text
-
-  &__checkbox-text {
-  }
 }
 
-/* /Page style */
+/* ===== MAIM SLIDER ===== */
 
-/* Main-Slider */
-.main-slider {
-  // .main-slider__body
 
-  &__body {
-  }
-
-  // .main-slider__slide
-
-  &__slide {
-    position: relative;
-    background: #e2e2e2;
-  }
-
-  // .main-slider__content
-
-  &__content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    z-index: 2;
-    padding: 21px 36px 58px 21px;
-  }
-
-  // .main-slider__title
-
-  &__title {
-    color: #333333;
-    font-size: 48px;
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 43px;
-    margin-bottom: 53px;
-    & > span {
-      display: block;
-      color: #f68038;
-    }
-  }
-
-  // .main-slider__text
-
-  &__text {
-  }
-
-  // .main-slider__bottom
-
-  &__bottom {
-    margin-top: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  // .main-slider__price
-
-  &__price {
-    font-size: 36px;
-    font-weight: 900;
-    color: #fff;
-  }
-
-  // .main-slider__btn
-
-  &__btn {
-    font-size: 14px;
-    font-weight: 900;
-    color: #fff;
-    border-radius: 25px;
-    background: none;
-    padding: 9px 22px;
-    border: 3px solid #ffffff;
-    text-transform: uppercase;
-    margin-top: 24px;
-    cursor: pointer;
-    &>span{
-      display: flex;
-      align-items: center;
-      &::after{
-        content: "";
-        display: block;
-        width: 14px;
-        height: 14px;
-        margin-left: 12px;
-        background: url(../img/slider-top/arrow-right.png) center center no-repeat;
-      }
-    }
-  }
-
-  // .main-slider__img
-
-  &__img {
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    & > img {
-      min-width: 100%;
-      height: auto;
-    }
-  }
-
-  // .main-slider__dots
-
-  &__dots {
-  }
-}
-.dots-slider{
-  display: flex;
-  justify-content: center;
-  transform: translateY(-50%);
-  z-index: 1;
-  &__number{
-    width: 55px;
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: solid 2px #fff;
-    margin-left: 45px;
-    background: #f68038;
-    font-size: 16px;
-    color: #ffffff;
-    font-weight: 900;
-  }
-  &__dot{
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    border: solid 2px #fff;
-    margin-left: 45px;
-    background: #000;
-    overflow: hidden;
-    &>img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-}
-.text-slider {
-  line-height: 24px;
-  font-weight: 900;
-  line-height: 24px;
-  color: #333333;
-& >p{
-  display: inline;
-}
-  // .text-slider__1
-  &__1 {
-    font-size: 18px;
-    color: #f68038;
-    text-transform: uppercase;
-  }
-
-  // .text-slider__2
-
-  &__2 {
-    padding: 5px 8px;
-    color: #ffffff;
-    background: #979797;
-  }
-
-  // .text-slider__3
-
-  &__3 {
-    color: #979797;
-  }
-}
-
-/* /Main-Slider */
